@@ -29,6 +29,10 @@ export class CalculatorPageComponent implements OnInit {
   }
 
   getBirthday(){
+    if(this.ageInput < 0){
+      alert("La edad ingresaba debe ser mayor o igual a 0")
+      return;
+    }
     this.dateResult = this.calculatorService.getDoBfromAge(this.ageInput);
     console.log(this.dateResult);
   }
