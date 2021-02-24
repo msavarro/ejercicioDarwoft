@@ -12,6 +12,7 @@ export class CalculatorPageComponent implements OnInit {
   ageResult: number = 0;
 
   ageInput: number = 0;
+  checkboxBirthday: boolean = false;
   dateResult: Date = new Date();
 
   constructor(private calculatorService: CalculatorService) { }
@@ -33,7 +34,7 @@ export class CalculatorPageComponent implements OnInit {
       alert("La edad ingresaba debe ser mayor o igual a 0")
       return;
     }
-    this.dateResult = this.calculatorService.getDoBfromAge(this.ageInput);
+    this.dateResult = this.calculatorService.getDoBfromAge(this.ageInput, this.checkboxBirthday);
     console.log(this.dateResult);
   }
 

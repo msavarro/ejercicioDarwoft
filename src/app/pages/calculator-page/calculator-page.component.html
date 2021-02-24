@@ -3,7 +3,7 @@
         <p>En esta columna ingrese fecha de nacimiento para calcular edad</p>
     </div>
     <div class="col align-self-center">
-        <p>En esta columna ingrese edad para calcular fecha de nacimiento (Actualmente muestra 2021 - edad)</p>
+        <p>En esta columna ingrese edad para calcular fecha de nacimiento (Actualmente muestra año de nacimiento)</p>
     </div>
 </div>
 <div class="row">
@@ -11,13 +11,15 @@
         <label>Ingrese fecha de nacimiento</label>
     </div>
     <div class="col align-self-center">
-        <label>Ingrese Edad</label>
+        <label class="checkbox-inline no_indent">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="checkboxBirthday">
+            Ya cumplio años este año? Indique su edad</label>
     </div>
 </div>
 <div class="row">
     <div class="col align-self-center">
         <input class="form-control" type="date" (ngModelChange)="onChangeDate($event)" name="dateInput"
-                        [ngModel]="dateInput | date:'yyyy-MM-dd'" [ngModelOptions]="{ updateOn: 'blur' }">
+            [ngModel]="dateInput | date:'yyyy-MM-dd'" [ngModelOptions]="{ updateOn: 'blur' }">
     </div>
     <div class="col align-self-center">
         <input class="form-control" type="number" placeholder="Ingrese edad" name="ageInput" [(ngModel)]="ageInput">

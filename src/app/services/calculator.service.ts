@@ -18,9 +18,10 @@ export class CalculatorService {
     return 0;
   }
 
-  getDoBfromAge(age: number){
+  getDoBfromAge(age: number, birthday: boolean){
     console.log(age);
-    var año = 2021 - age;
+    var aux = birthday ? 0 : 1;
+    var año = 2021 - age - aux;
     console.log(año);
     return new Date(año,0);
   }
